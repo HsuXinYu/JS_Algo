@@ -1,4 +1,6 @@
 //1+2+3+4+...+n=sum 演算法 1.時間短(較不實際，因不同電腦執行狀況不同，因此分析複雜度) 2.占用記憶體空間少 較佳
+
+//f(n)=3n
 function fun1(n) {
   let sum = 0;
   for (let i = 1; i <= n; i++) {
@@ -8,6 +10,7 @@ function fun1(n) {
 }
 console.log(fun1(10));
 
+//f(n)=3
 function fun2(n) {
   return ((1 + n) * n) / 2;
 }
