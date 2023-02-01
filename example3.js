@@ -26,3 +26,13 @@ function example(n) {
 for (let i = 1; i < 10; i++) {
   console.log(`example${i} will print out ` + example(i) + "Hello.");
 }
+
+//Big O in Objects and Arrays
+let n = 5;
+let arr = [1, 3, 5, 7, 9];
+
+for (let i = 0; i < n; i++) {
+  arr.unshift(10);
+}
+console.log(arr);
+//for loop為O(n),unshift為O(n),此程式為O(n*n)
