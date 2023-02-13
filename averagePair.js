@@ -22,7 +22,7 @@ function pointer(arr, avg) {
   let left = 0;
   let right = arr.length - 1;
   let result = [];
-  while (right > left) {
+  while (right >= left) {
     let temp_avg = (arr[left] + arr[right]) / 2;
     if (temp_avg > avg) {
       right--;
