@@ -22,7 +22,6 @@ function example(n) {
   return counter;
 }
 
-// example(2);
 for (let i = 1; i < 10; i++) {
   console.log(`example${i} will print out ` + example(i) + "Hello.");
 }
