@@ -1,4 +1,3 @@
-//recusion
 function recusion(n) {
   if (n == 1) {
     return 10;
