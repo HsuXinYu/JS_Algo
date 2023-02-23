@@ -1,13 +1,13 @@
 //best O(n) worst O(n^2) average O(n^2)
 function insertionSort(arr) {
-  for (j = 0; j <= arr.length - 1; j++) {
-    let key = arr[j];
-    let i = j - 1;
-    while (i >= 0 && arr[i] > key) {
-      arr[i + 1] = arr[i];
-      i -= 1;
+  for (i = 0; i <= arr.length - 1; i++) {
+    let key = arr[i];
+    let j = i - 1;
+    while (j >= 0 && arr[j] > key) {
+      arr[j + 1] = arr[j];
+      j -= 1;
     }
-    arr[i + 1] = key;
+    arr[j + 1] = key;
   }
   console.log(arr);
   return arr;
