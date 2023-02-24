@@ -1,24 +1,24 @@
 //best O(n log n) worst O(n log n) average O(n log n)
 function marge(arr1, arr2) {
   let result = [];
-  let i1 = 0;
-  let i2 = 0;
-  while (i1 < arr1.length && i2 < arr2.length) {
-    if (arr1[i1] < arr2[i2]) {
-      result.push(arr1[i1]);
-      i1++;
-    } else if (arr1[i1] > arr2[i2]) {
-      result.push(arr2[i2]);
-      i2++;
+  let i = 0;
+  let j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      result.push(arr1[i]);
+      i++;
+    } else if (arr1[i] > arr2[j]) {
+      result.push(arr2[j]);
+      j++;
     }
   }
-  while (i1 < arr1.length) {
-    result.push(arr1[i1]);
-    i1++;
+  while (i < arr1.length) {
+    result.push(arr1[i]);
+    i++;
   }
-  while (i2 < arr2.length) {
-    result.push(arr2[i2]);
-    i2++;
+  while (j < arr2.length) {
+    result.push(arr2[j]);
+    j++;
   }
   return result;
 }
