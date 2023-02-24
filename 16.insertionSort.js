@@ -4,6 +4,7 @@ function insertionSort(arr) {
     let key = arr[i];
     let j = i - 1;
     while (j >= 0 && arr[j] > key) {
+      //當j不是最小值且j大於key時執行
       arr[j + 1] = arr[j];
       j -= 1;
     }

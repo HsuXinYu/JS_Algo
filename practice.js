@@ -22,8 +22,8 @@ function practice1(arr) {
       j--;
     }
     arr[j + 1] = key;
+    console.log(arr);
   }
-  console.log(arr);
   return arr;
 }
 
@@ -44,5 +44,4 @@ function practice2(arr) {
 }
 
 let test = [14, -4, 17, 6, 22, 1, -5];
-
-practice2(test);
+practice1(test);
