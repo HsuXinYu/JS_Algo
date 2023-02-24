@@ -5,14 +5,12 @@ function longestCommonPrefix(strs) {
   if (strs[0] == "") {
     console.log("");
     return "";
+  } else if (strs.length == 1) {
+    console.log(strs[0]);
+    return strs[0];
   }
 
   for (let i2 = 0; i2 < strs[0].length; i2++) {
-    if (strs.length == 1) {
-      console.log(strs[0]);
-      return strs[0];
-    }
-
     for (let i1 = 1; i1 < strs.length; i1++) {
       if (strs[0].charAt(i2) == strs[i1].charAt(i2)) {
         isSame = true;
@@ -36,9 +34,9 @@ function longestCommonPrefix(strs) {
 }
 
 // let strs = [""]; //""
-// let strs = ["a"]; //"a"
+let strs = ["a"]; //"a"
 // // let strs = ["flower", "flow", "flight"]; //"fl"
 // let strs = ["flower", "flower", "flower", "flower"]; //flower
-let strs = ["cir", "car"]; //c
+// let strs = ["cir", "car"]; //c
 
 longestCommonPrefix(strs);
