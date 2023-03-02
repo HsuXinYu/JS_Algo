@@ -1,3 +1,4 @@
+//best O(n log n) worst O(n^2) average O(n log n)
 let arr = [15, 3, 17, 18, 20, 1, 66];
 
 function partition(p, r) {

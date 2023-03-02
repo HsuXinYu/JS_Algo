@@ -19,11 +19,10 @@ function maxHeapify(i) {
   } else {
     largest = i;
   }
-  if (r <= heapsize && arr[r] > arr[i]) {
+  if (r <= heapsize && arr[r] > arr[largest]) {
     largest = r;
-  } else {
-    largest = i;
   }
+
   if (largest != i) {
     let temp = arr[i];
     arr[i] = arr[largest];
@@ -36,13 +35,13 @@ function maxHeapify(i) {
 function heapSort() {
   buildMaxHeap();
   //將已排好的二元樹與最後一個值交換後，整個陣列長度-1，在執行一次maxHeapify
-  for (let i = arr.langth - 1; i >= 0; i--) {
+  for (let i = arr.length - 1; i >= 0; i--) {
     let temp = arr[0];
     arr[0] = arr[i];
     arr[i] = temp;
     heapsize -= 1;
     maxHeapify(0);
-    console.log(i);
+    console.log(i, arr);
   }
   return arr;
 }
