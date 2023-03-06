@@ -12,10 +12,10 @@ let numbers = [
 function binarySearch(arr, n) {
   let min = 0;
   let max = arr.length - 1;
-  let step = 0;
+  // let step = 0;
 
   while (min <= max) {
-    step++;
+    // step++;
     let middle = Math.floor((max + min) / 2);
     if (n > arr[middle]) {
       min = middle + 1;
@@ -23,7 +23,7 @@ function binarySearch(arr, n) {
       max = middle - 1;
     } else if (n === arr[middle]) {
       console.log("Found number " + n + " at position " + middle);
-      console.log("Found it after " + step + " steps.");
+      // console.log("Found it after " + step + " steps.");
       return middle;
     }
   }
@@ -32,4 +32,4 @@ function binarySearch(arr, n) {
   return -1;
 }
 
-binarySearch(numbers, 213); // 6 - 7
+binarySearch(numbers, 213); //69
