@@ -60,7 +60,7 @@ class LinkedList {
   shift() {
     if (!this.head) {
       return null;
-    } else if (this.length == 1) {
+    } else if (this.length === 1) {
       let temp = this.head;
       this.head = null;
       this.length = 0;
@@ -77,20 +77,38 @@ class LinkedList {
     if (index > this.length || index < 0) {
       return null;
     } else if (index === 0) {
-      this.unshift();
+      this.unshift(value);
       return;
     } else if (index === this.length) {
-      this.pop();
+      this.push(value);
       return;
     }
     let currentNode = this.head;
     let newNode = new Node(value);
-    for (let i = 1; i <= index - 1; i++) {
+    for (let i = 0; i < index - 1; i++) {
       currentNode = currentNode.next;
     }
     newNode.next = currentNode.next;
     currentNode.next = newNode;
     this.length++;
+  }
+
+  removeAt(index) {
+    if (index > this.length - 1 || index < 0) {
+      return null;
+    } else if (index === 0) {
+      this.shift();
+      return;
+    } else if (index === this.length - 1) {
+      this.pop();
+      return;
+    }
+    let currentNode = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = currentNode.next.next;
+    this.length--;
   }
 
   printAll() {
@@ -108,8 +126,8 @@ class LinkedList {
 }
 
 let myLinkedList = new LinkedList();
-myLinkedList.push("mike");
-myLinkedList.push("cindy");
+myLinkedList.push("amy");
+myLinkedList.push("betty");
 
 // let poppedValue = myLinkedList.pop();
 // console.log(poppedValue);
@@ -117,8 +135,10 @@ myLinkedList.push("cindy");
 // let shiftedtValue = myLinkedList.shift();
 // console.log(shiftedValue);
 
-myLinkedList.push("amy");
-myLinkedList.push("lucy");
-myLinkedList.insertAt(2, "tank");
+myLinkedList.push("cindy");
+myLinkedList.push("david");
+
+// myLinkedList.insertAt(4, "tank");
+myLinkedList.removeAt(3);
 
 myLinkedList.printAll();
