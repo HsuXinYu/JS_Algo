@@ -1,4 +1,4 @@
-function RomanToInteger(s) {
+function romanToInteger(s) {
   let roman = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
   let ans = 0;
   let left = 0;
@@ -20,6 +20,6 @@ function RomanToInteger(s) {
   return ans;
 }
 
-RomanToInteger("III"); //3
-RomanToInteger("LVIII"); //58
-RomanToInteger("MCMXCIV"); //1994
+romanToInteger("III"); //3
+romanToInteger("LVIII"); //58
+romanToInteger("MCMXCIV"); //1994

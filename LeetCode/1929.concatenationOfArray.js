@@ -1,4 +1,4 @@
-function ConcatenationOfArray(nums) {
+function concatenationOfArray(nums) {
   let numbers = [];
   let i = 0;
   let len = nums.length * 2;
@@ -14,6 +14,6 @@ function ConcatenationOfArray(nums) {
 
 let nums = [1, 2, 1];
 
-ConcatenationOfArray(nums);
+concatenationOfArray(nums);
 
 // ans of length 2n where ans[i] == nums[i] and ans[i + n] == nums[i] for 0 <= i < n (0-indexed).
