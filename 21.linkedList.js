@@ -85,7 +85,7 @@ class LinkedList {
     }
     let currentNode = this.head;
     let newNode = new Node(value);
-    for (let i = 0; i < index - 1; i++) {
+    for (let i = 1; i < index; i++) {
       currentNode = currentNode.next;
     }
     newNode.next = currentNode.next;
@@ -104,11 +104,23 @@ class LinkedList {
       return;
     }
     let currentNode = this.head;
-    for (let i = 0; i < index - 1; i++) {
+    for (let i = 1; i < index; i++) {
       currentNode = currentNode.next;
     }
     currentNode.next = currentNode.next.next;
     this.length--;
+  }
+
+  get(index) {
+    if (index > this.length - 1 || index < 0) {
+      return null;
+    } else {
+      let currentNode = this.head;
+      for (let i = 0; i < index; i++) {
+        currentNode = currentNode.next;
+      }
+      return currentNode.value;
+    }
   }
 
   printAll() {
@@ -138,7 +150,8 @@ myLinkedList.push("betty");
 myLinkedList.push("cindy");
 myLinkedList.push("david");
 
-// myLinkedList.insertAt(4, "tank");
-myLinkedList.removeAt(3);
+// myLinkedList.insertAt(1, "tank");
+// myLinkedList.removeAt(3);
+console.log(myLinkedList.get(1));
 
-myLinkedList.printAll();
+// myLinkedList.printAll();
