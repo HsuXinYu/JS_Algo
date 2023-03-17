@@ -33,6 +33,33 @@ class BinarySearchTree {
     }
   }
 
+  //x代表結點
+  searchRecursively(x, value) {
+    if (x === null || value == x.value) {
+      return x;
+    } else if (value < x.value) {
+      return this.searchRecursively(x.left, value);
+    } else {
+      return this.searchRecursively(x.right, value);
+    }
+  }
+
+  searchIteratively(x, value) {
+    while (x != null && value != x.value) {
+      if (value < x.value) {
+        x = x.left;
+      } else {
+        x = x.right;
+      }
+    }
+    if (x == null) {
+      console.log("Node not found");
+    } else {
+      console.log("Node found");
+    }
+    return x;
+  }
+
   preOrder(n) {
     if (n != null) {
       this.path += n.value + " ";
@@ -86,5 +113,8 @@ bst.treeInsert(new Node(-7));
 bst.treeInsert(new Node(3));
 
 // bst.postOrder(bst.root);
-bst.bftt(bst.root);
-console.log(bst.queue);
+// bst.bftt(bst.root);
+// console.log(bst.queue);
+
+let result = bst.searchIteratively(bst.root, 13);
+console.log(result);
