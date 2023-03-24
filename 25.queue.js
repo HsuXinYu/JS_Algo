@@ -32,11 +32,58 @@ class PriorityQueue {
       parentIndex = Math.floor((newIndex - 1) / 2);
     }
   }
+
+  dequeue() {
+    if (this.values.length === 0) {
+      return null;
+    }
+    if (this.values.length === 1) {
+      let removedNode = this.values.pop();
+      return removedNode;
+    }
+    let temp = this.values.pop();
+    this.values.push(this.values[0]);
+    this.values[0] = temp;
+    let removedNode = this.values.pop();
+    this.maxHeapify(0);
+    return removedNode;
+  }
+
+  maxHeapify(i) {
+    let largest;
+    let l = i * 2 + 1;
+    let r = i * 2 + 2;
+    if (
+      l <= this.values.length - 1 &&
+      this.values[l].priority > this.values[i].priority
+    ) {
+      largest = l;
+    } else {
+      largest = i;
+    }
+    if (
+      r <= this.values.length - 1 &&
+      this.values[r].priority > this.values[largest].priority
+    ) {
+      largest = r;
+    }
+
+    if (largest != i) {
+      let temp = this.values[i];
+      this.values[i] = this.values[largest];
+      this.values[largest] = temp;
+      this.maxHeapify(largest);
+    }
+  }
 }
 
 let pq = new PriorityQueue();
 pq.enqueue("Eat", 15);
 pq.enqueue("Learn Javascript", 20);
 pq.enqueue("Sleep", 10);
+pq.enqueue("Buy Book", 8);
 
-console.log(pq);
+pq.dequeue();
+pq.dequeue();
+let task = pq.dequeue(); //第三順位
+console.log(task);
