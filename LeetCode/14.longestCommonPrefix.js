@@ -34,9 +34,9 @@ function longestCommonPrefix(strs) {
 }
 
 // let strs = [""]; //""
-let strs = ["a"]; //"a"
+// let strs = ["a"]; //"a"
 // // let strs = ["flower", "flow", "flight"]; //"fl"
-// let strs = ["flower", "flower", "flower", "flower"]; //flower
+let strs = ["flower", "flower", "flower", "flower"]; //flower
 // let strs = ["cir", "car"]; //c
 
 longestCommonPrefix(strs);
