@@ -76,7 +76,7 @@ function DFT(starter) {
   return result;
 }
 
-// console.log(DFT(A));
+console.log(DFT(A));
 
 function BFT(starter) {
   let queue = [];
