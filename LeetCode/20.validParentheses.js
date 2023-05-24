@@ -1,22 +1,46 @@
 var isValid = function (s) {
-  let counter = {};
-  for (let i = 0; i < s.length; i++) {
-    if (counter[s[i]]) {
-      counter[s[i]]++;
-    } else {
-      counter[s[i]] = 1;
+  let arr = [];
+  let times = s.length / 2;
+
+  if (Number.isInteger(times)) {
+    for (let i = 0; i < s.length; i++) {
+      if (s[i] == "(" || s[i] == "[" || s[i] == "{") {
+        arr.push(s[i]);
+      }
+
+      // console.log(arr, arr.length, s[i]);
+      let last = arr[arr.length - 1];
+      if (last == "(" && s[i] == ")") {
+        arr.pop();
+      } else if (s[i] == ")") {
+        console.log(false);
+        return false;
+      }
+
+      if (last == "[" && s[i] == "]") {
+        arr.pop();
+      } else if (s[i] == "]") {
+        console.log(false);
+        return false;
+      }
+      if (last == "{" && s[i] == "}") {
+        arr.pop();
+      } else if (s[i] == "}") {
+        console.log(false);
+        return false;
+      }
     }
-  }
-  // console.log(counter["["]);
-  if (
-    counter["("] == counter[")"] &&
-    counter["{"] == counter["}"] &&
-    counter["["] == counter["]"]
-  ) {
-    console.log("true");
-    return true;
+    // console.log(arr);
+
+    if (arr.length == 0) {
+      console.log(true);
+      return true;
+    } else {
+      console.log(false);
+      return false;
+    }
   } else {
-    console.log("false");
+    console.log(false);
     return false;
   }
 };
@@ -24,6 +48,7 @@ var isValid = function (s) {
 // isValid("()"); //true
 // isValid("(]"); //false
 // isValid("()[]{}"); //true
-isValid("{[]}"); //true
-isValid("(]"); //false
-isValid("([)]"); //flase
+// isValid("{[]}"); //true
+// isValid("([)]"); //false
+// isValid("([)]"); //false
+isValid("([}}])"); //false
