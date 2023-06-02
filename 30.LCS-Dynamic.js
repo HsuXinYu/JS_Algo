@@ -1,12 +1,5 @@
 let table1;
 let table2;
-let result = "";
-let x = "ATAACGCGCTGCTCGGGT";
-let y = "TCAATCAGGATCCGCTGA";
-
-LCS(x, y);
-printLCS(x.length, y.length);
-console.log(result.length);
 
 function LCS(str1, str2) {
   let m = str1.length;
@@ -50,6 +43,8 @@ function LCS(str1, str2) {
   }
 }
 
+let result = "";
+
 function printLCS(i, j) {
   if (i == 0 || j == 0) {
     return;
@@ -63,3 +58,10 @@ function printLCS(i, j) {
     printLCS(i, j - 1);
   }
 }
+
+let x = "ATAACGCGCTGCTCGGGT";
+let y = "TCAATCAGGATCCGCTGA";
+
+LCS(x, y);
+printLCS(x.length, y.length);
+console.log(result);
